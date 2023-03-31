@@ -35,7 +35,7 @@ export default {
       const step = obj.step;
       if (step === 1){
         this.activities.push({
-          content: obj.user + " create request " + obj.task + " task",
+          content: obj.user + " 创建了任务 " + obj.task + " 任务",
           timestamp: obj.time,
           size: 'large',
           type: 'primary',
@@ -47,8 +47,8 @@ export default {
           type: "primary",
           color: "green",
           size: "large",
-          timestamp: "2019-01-01 12:00:00",
-          content: "Edit file"
+          timestamp: obj.timeStamp,
+          content: "任务将被放置到节点 " + obj.node + " , 分配的资源为cpu" + obj.cpuSize + "m, 内存" + obj.memorySize + "Mi."
         });
       } else if (step === 3){
         this.activities.push({
@@ -56,17 +56,8 @@ export default {
           type: "primary",
           color: "green",
           size: "large",
-          timestamp: "2019-01-01 12:00:00",
-          content: "View file"
-        });
-      } else if (step === 4){
-        this.activities.push({
-          icon: "el-icon-download",
-          type: "primary",
-          color: "green",
-          size: "large",
-          timestamp: "2019-01-01 12:00:00",
-          content: "Download file"
+          timestamp: obj.timeStamp,
+          content: "放置成功, 应用地址为 https://" + obj.url
         });
       }
     };
